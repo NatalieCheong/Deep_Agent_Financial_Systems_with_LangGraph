@@ -1,4 +1,4 @@
-# DeepAgent Financial Systems
+# DeepAgent Financial Systems with LangGraph
 
 An advanced AI-powered financial research platform built with LangChain, LangGraph, and OpenAI models. This system provides institutional-quality financial analysis using real-time market data and sophisticated multi-agent architectures.
 
