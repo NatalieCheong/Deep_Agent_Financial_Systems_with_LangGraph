@@ -1,0 +1,173 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deepagent-financial-systems"
+version = "1.0.0"
+description = "Advanced AI financial research platform built with LangGraph using real YFinance market data"
+authors = [
+    {name = "DeepAgent Financial Systems", email = "contact@deepagent.ai"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+keywords = ["finance", "ai", "langchain", "langgraph", "trading", "investment", "research", "yfinance"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    # Core LangChain and LangGraph
+    "langchain>=0.3.7",
+    "langchain-openai>=0.2.8",
+    "langgraph>=0.2.45",
+    "langchain-core>=0.3.15",
+    "langchain-community>=0.3.7",
+    
+    # Real Financial Data (NO mock data)
+    "yfinance>=0.2.40",
+    "pandas>=2.2.3",
+    "numpy>=1.26.4",
+    
+    # Web Search and Research
+    "tavily-python>=0.5.0",
+    
+    # Core Dependencies
+    "python-dotenv>=1.0.1",
+    "pydantic>=2.9.2",
+    "typing-extensions>=4.12.2",
+    
+    # HTTP and Data Processing
+    "aiohttp>=3.10.10",
+    "requests>=2.32.3",
+    "beautifulsoup4>=4.12.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+    "isort>=5.12.0",
+    "pre-commit>=3.0.0",
+]
+
+analysis = [
+    "matplotlib>=3.9.2",
+    "plotly>=5.24.1",
+    "scipy>=1.14.1",
+    "scikit-learn>=1.5.2",
+]
+
+jupyter = [
+    "jupyter>=1.1.1",
+    "notebook>=7.2.2",
+    "ipykernel>=6.29.5",
+]
+
+all = [
+    "deepagent-financial-systems[dev,analysis,jupyter]"
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/deepagent-financial-systems"
+Repository = "https://github.com/your-username/deepagent-financial-systems"
+Documentation = "https://github.com/your-username/deepagent-financial-systems/wiki"
+"Bug Tracker" = "https://github.com/your-username/deepagent-financial-systems/issues"
+
+[project.scripts]
+deepagent = "main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*.py"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.md", "*.txt", "*.yml", "*.yaml", "*.toml"]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.coverage.run]
+source = ["."]
+omit = [
+    "tests/*",
+    "setup.py",
+    "*/site-packages/*",
+    ".venv/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\bProtocol\):",
+    "@(abc\.)?abstractmethod",
+]
