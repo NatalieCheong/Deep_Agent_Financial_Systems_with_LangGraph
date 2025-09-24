@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+      "."
+    ],
+    "graphs": {
+      "deepagent_financial": "./studio_config.py:graph"
+    },
+    "env": "./.env"
+  }
