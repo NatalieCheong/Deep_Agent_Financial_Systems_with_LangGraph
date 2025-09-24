@@ -124,7 +124,7 @@ To run the graph in LangGraph Studio UI:
    ```
 
 2. **Access the Studio UI:**
-   - Open your browser and go to `http://localhost:8123`
+   - Open your browser and go to `https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024`
    - You'll see the interactive graph visualization
 
 3. **Run Analysis:**
