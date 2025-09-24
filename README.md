@@ -80,7 +80,7 @@ graph TD
 
 1. **Clone the repository**
 ```bash
-   git clone <repository-url>
+   git clone https://github.com/NatalieCheong/Deep_Agent_Financial_Systems_with_LangGraph
    cd DeepAgents_Financial_with_LangGraph
    ```
 
@@ -250,10 +250,6 @@ Built-in rate limiting ensures compliance with API limits while maintaining opti
 - No financial data is stored permanently
 - All analysis is performed in real-time with temporary data processing
 
-## 🤝 Contributing
-
-We welcome contributions! Please feel free to submit issues, feature requests, or pull requests.
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -274,13 +270,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Tavily**: For web search capabilities and market intelligence
 - **LangSmith**: For observability and debugging tools
 
-## 📞 Support
-
-For questions, issues, or contributions, please:
-- Open an issue on GitHub
-- Check the documentation
-- Review the configuration guide
-
 ---
 
-**Built with ❤️ for the financial AI community**
